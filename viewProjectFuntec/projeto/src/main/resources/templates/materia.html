@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNTEC</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f5fffa;
+            height: 100vh;
+        }
+        li,a,button{
+            font-weight: 500;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            background: #2c2c2c;
+        }
+        .logo{
+            cursor: pointer;
+            width: 300px;
+            height: 75px;
+        }
+        .nav-bar{
+            list-style: none;
+        }
+        .nav-bar > li{
+            display: inline-block;
+            padding: 0px 20px;
+        }
+        .nav-bar li a {
+            transition: all 0.3s ease 0s;
+        }
+        .nav-bar li a:hover{
+            color: #0088a9;
+        }
+        button{
+            padding: 9px 25px;
+            background-color: #0088a9;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .titulo-noticia{
+            background-color: transparent;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #314a30;
+        }
+        .thumbnail{
+            border-style: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/funtec.png" alt="logorp">
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="index.html">MENU</a></li>
+                <li><a href="materia.html">MATERIA</a></li>
+                <li><a href="calendario.html">CALENDARIO</a></li>
+            </ul>
+        </nav>
+            <a class="logout" href="login.html"><button>SAIR</button></a>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <center>
+                <h1 class="text-uppercase titulo-noticia">Materias  </h1>
+            </center>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank">
+                    <img class="img-responsive" src="images/logohtml.png" alt="HTML"> 
+                    </a>
+                    <div class="caption">
+                        <center>   
+                            <h3>HTML  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLucm8g_ezqNoAkYKXN_zWupyH6hQCAwxY" target="_blank">
+                    <img class="img-responsive" src="images/logopostgree.png" alt="POSTGREE"> </a>
+                    <div class="caption">
+                        <center> 
+                        <h3>POSTGREE  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY" target="_blank">
+                    <img class="img-responsive" src="images/logojava.png" alt="POO"> </a>
+                    <div class="caption">
+                        <center>
+                        <h3>POO  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PL8iIphQOyG-DHLpEx1TPItqJamy08fs1D" target="_blank">
+                    <img class="img-responsive" src="images/logospringboot.png" alt="SPRINGBOOT"> </a>
+                    <div class="caption">
+                        <center>
+                        <h3>SPRING BOOT  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLLzs7O8M45df2GjOQ0qbZleaOPzPoAdQv" target="_blank">
+                    <img class="img-responsive" src="images/logogitgit.png" alt="GITGITHUB"> </a>
+                    <div class="caption">
+                        <center>
+                        <h3>GIT & GITHUB  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLx4x_zx8csUjFC5WWjoNUL7LOOD7LCKRW" target="_blank">
+                    <img class="img-responsive" src="images/logojava.png" alt="JAVA"> </a>
+                    <div class="caption">
+                        <center>
+                        <h3>JAVA  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank">
+                    <img class="img-responsive" src="images/logocss.png" alt="CSS"> 
+                    </a>
+                    <div class="caption">
+                        <center>   
+                            <h3>CSS  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1" target="_blank">
+                    <img class="img-responsive" src="images/logojavascript.png" alt="HTML"> 
+                    </a>
+                    <div class="caption">
+                        <center>   
+                            <h3>JAVASCRIPT  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="https://youtube.com/playlist?list=PLRCKdG6PaMS02zE-ctR0ZHZUhcsx_yj-V" target="_blank">
+                    <img class="img-responsive" src="images/logojava.png" alt="LOGICAP"> 
+                    </a>
+                    <div class="caption">
+                        <center>   
+                            <h3>LOGICA DE PROGRAMAÇÃO  </h3>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

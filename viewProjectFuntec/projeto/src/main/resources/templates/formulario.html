@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNTEC</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+    /*MUDAR A FONTE*/
+    
+        /*FORMULARIO*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway';
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-image: url(images/fundo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .formulario-aluno{
+            max-width: 700px;
+            width: 100%;
+            background: #2c2c2c;
+            padding: 25px 30px;
+            border-radius: 5px;
+        }
+        .formulario-aluno .titulo{
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+            color: #45f3ff;
+        }
+        .formulario-aluno .titulo::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            background: #45f3ff;
+        }
+        .formulario-aluno form .formulario-dados{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+            color: #45f3ff;
+        }
+        form .formulario-dados .formulario-input{
+            margin-bottom: 15px;
+            width: calc(100% / 2 - 20px);   
+        }
+        .formulario-dados .formulario-input .dados{
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .formulario-dados .formulario-input input{
+            height: 35px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .formulario-dados .formulario-input input:focus,
+        .formulario-dados .formulario-input input:valid{
+            border-color: #9b59b6;
+        }
+        form .cursos .nome-cursos{
+            font-size: 20px;
+            font-weight: 500;
+            color: #45f3ff;
+        }
+        form .cursos .todos-cursos{
+            display: flex;
+            width: 80%;
+            margin: 14px 0;
+            justify-content: space-between;
+        }
+        .cursos .todos-cursos label{
+            display: flex;
+            align-items: center;
+            color: #45f3ff;
+        }
+        .cursos .todos-cursos .curso{
+            height: 18px;
+            width: 18px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 5px solid transparent;
+            transition: all 0.3s ease;
+        }
+        #curso-1:checked ~ .todos-cursos label .java,
+        #curso-2:checked ~ .todos-cursos label .word,
+        #curso-3:checked ~ .todos-cursos label .excel,
+        #curso-4:checked ~ .todos-cursos label .windows{
+            border-color: #d9d9d9;
+            background: #5dd6b2;
+        }
+        form input[type="radio"]{
+            display: none;
+        }
+        form .botao{
+            height: 45px;
+            margin: 45px 0;
+        }
+        form .botao input{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: black;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            outline: none;
+            background: #45f3ff;
+        }
+    
+        /*RESPONSIVIDADE*/
+        @media (max-width: 1920px) {
+            .formulario-aluno{
+                max-width: 700px;
+                width: 100%;
+                height: 620px;
+            }
+        }
+        </style>
+
+</head>
+<body>
+    <div class="formulario-aluno">
+        <div class="titulo">CADASTRE-SE</div>
+        <form action="/insert" th:action="@{/add}" method="POST" modelAttribute="aluno" th:object="${aluno}">
+            <div class="formulario-dados">
+                <div class="formulario-input">
+                    <span class="dados">NOME : </span>
+                    <input id="nome-aluno" type="text" name="nome" placeholder="DIGITE O SEU NOME" required>
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">TELEFONE : </span>
+                    <input id="telefone-aluno" type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" required maxlength="16">
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">ENDEREÇO : </span>
+                    <input id="endereco-aluno" type="text" name="endereco" placeholder="DIGITE O SEU ENDEREÇO" required>
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">DATA DE NASCIMENTO : </span>
+                    <input id="dtan-aluno" type="text" name="dt_nascimento" placeholder="DD/MM/AAAA" required maxlength="10">
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">NOME PAI : </span>
+                    <input id="nomepai-aluno" type="text" name="nome_pai" placeholder="DIGITE O NOME PAI" required>
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">NOME MAE : </span>
+                    <input id="nomemae-aluno" type="text" name="nome_mae" placeholder="DIGITE O NOME DA MAE" required>
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">EMAIL : </span>
+                    <input id="email-aluno" type="email" name="email" placeholder="DIGITE O SEU EMAIL" required>
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">RG : </span>
+                    <input id="rg-aluno" type="text" name="rg" placeholder="XX.XXX.XXX-X" required maxlength="12">
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">CPF : </span>
+                    <input id="cpf-aluno" type="text" name="cpf" placeholder="XXX.XXX.XXX-XX" required  maxlength="14">
+                </div>
+                <div class="formulario-input">
+                    <span class="dados">SENHA : </span>
+                    <input id="senha-aluno" type="password" name="senha" placeholder="DIGITE SUA SENHA" required maxlength="10">
+                </div>
+            </div>
+
+            <div class="cursos">
+                <input type="radio" name="id_curso" id="curso-1" value="1">
+                <input type="radio" name="id_curso" id="curso-2" value="2">
+                <input type="radio" name="id_curso" id="curso-3" value="3">
+                <input type="radio" name="id_curso" id="curso-4" value="4">
+                <span class="nome-cursos">CURSOS : </span>
+                <div class="todos-cursos">
+                    <label for="curso-1">
+                        <span class="curso java"></span>
+                        <span class="cursos">JAVA</span>
+                    </label>
+                    <label for="curso-2">
+                        <span class="curso word"></span>
+                        <span class="cursos">WORD</span>
+                    </label>
+                    <label for="curso-3">
+                        <span class="curso excel"></span>
+                        <span class="cursos">EXCEL</span>
+                    </label>
+                    <label for="curso-4">
+                        <span class="curso windows"></span>
+                        <span class="cursos">WINDOWS</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="botao">
+                <input type="submit" value=REGISTRE-SE>
+            </div>
+
+        </form>
+    </div>
+
+        <!--COMO NÃO SABIA FORMATAR ALGUNS CAMPOS RESOLVI PESQUISAR ELES E USEI O DESSE VIDEO https://youtu.be/LT8eZdodA_0 E ACABEI USANDO O JQUERY-->
+        <script>
+            $('#cpf-aluno').mask('000.000.000-00', {reverse: true});
+            $('#dtan-aluno').mask('00/00/0000');
+            $('#telefone-aluno').mask('(00) 00000-0000');
+            $('#rg-aluno').mask('00.000.000-0' , {reverse: true});
+       </script>
+
+</body>
+</html>

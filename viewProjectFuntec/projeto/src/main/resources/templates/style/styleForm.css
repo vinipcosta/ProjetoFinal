@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+/*MUDAR A FONTE*/
+
+/*FORMULARIO*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url(../images/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.formulario-aluno{
+    max-width: 700px;
+    width: 100%;
+    background: #2c2c2c;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.formulario-aluno .titulo{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    color: #45f3ff;
+}
+.formulario-aluno .titulo::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #45f3ff;
+}
+.formulario-aluno form .formulario-dados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    color: #45f3ff;
+}
+form .formulario-dados .formulario-input{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);   
+}
+.formulario-dados .formulario-input .dados{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.formulario-dados .formulario-input input{
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.formulario-dados .formulario-input input:focus,
+.formulario-dados .formulario-input input:valid{
+    border-color: #9b59b6;
+}
+form .cursos .nome-cursos{
+    font-size: 20px;
+    font-weight: 500;
+    color: #45f3ff;
+}
+form .cursos .todos-cursos{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.cursos .todos-cursos label{
+    display: flex;
+    align-items: center;
+    color: #45f3ff;
+}
+.cursos .todos-cursos .curso{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#curso-1:checked ~ .todos-cursos label .java,
+#curso-2:checked ~ .todos-cursos label .word,
+#curso-3:checked ~ .todos-cursos label .excel,
+#curso-4:checked ~ .todos-cursos label .windows{
+    border-color: #d9d9d9;
+    background: #5dd6b2;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .botao{
+    height: 45px;
+    margin: 45px 0;
+}
+form .botao input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: black;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    outline: none;
+    background: #45f3ff;
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width: 584px) {
+    .formulario-aluno{
+        max-width: 100%;
+    }
+}
